@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { fakeMyListings } from '../fake-data';
+import { ListingsService } from '../listings.service';
 import { Listing } from '../types';
 
 @Component({
@@ -13,18 +13,23 @@ export class EditListingPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private listingsService: ListingsService,
   ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.listing = fakeMyListings.find(listing => listing.id.toString() === id);
+    this.listingsService.getListingById(id)
+      .subscribe(listing => this.listing = listing);
 
   }
 
-  onSubmit(): void {
-    alert('Saving changes...');
-    this.router.navigateByUrl('/my-listings');
+  onSubmit({ name, description, price }): void {
+    const id = this.listing.id;
+    this.listingsService.editListing(id, name, description, price)
+      .subscribe(() => {
+        this.router.navigateByUrl('/my-listings');
+      })
   }
 
 }

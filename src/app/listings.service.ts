@@ -49,4 +49,31 @@ export class ListingsService {
   deleteListing(id: string): Observable<any> {
     return this.http.delete(`/api/listings/${id}`)
   }
+
+  createListing(name: string, description: string, price: number): Observable<Listing> {
+    return this.http.post<Listing>(
+      '/api/listings',
+      {
+        name,
+        description,
+        price,
+        userId: "12345"
+      },
+      httpOptions,
+    )
+  }
+
+  editListing(id: number, name: string, description: string, price: number): Observable<Listing> {
+    return this.http.put<Listing>(
+      `/api/listings/${id.toString()}`,
+      {
+        id,
+        name,
+        description,
+        price,
+        userId: "12345"
+      },
+      httpOptions,
+    )
+  }
 }
