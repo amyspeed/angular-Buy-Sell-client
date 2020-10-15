@@ -1,27 +1,30 @@
-# AngularEcommerce
+# Buy-and-sell Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+This is the Angular client repo.
 
-## Development server
+See the API repo here [https://github.com/amyspeed/.net-sql-buy-sell-API](https://github.com/amyspeed/.net-sql-buy-sell-API)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## To run
+- git clone both repos
+- Start mySQL with correct credentials, make sure it is running on port 3306
+- Open this repo in Visual Studio Community 2019 for mac
+- dotnet run
+- See that the server is running on port 5001
+- cd into Angualar project or open terminal in VS Code
+- npm start
+- View site in browser localhost:4200
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies
+- Angular
+- JavaScript
+- HTML/CSS
 
-## Build
+- asp.net
+- .net core
+- MVC
+- C#
+- Visual Studio 2019 for Mac
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- mySQL
+- mySQL Workbench
